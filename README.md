@@ -1,49 +1,39 @@
-.
+E-commerce Product Recommender
 
-🛒 E-commerce Product Recommender
-🎯 Objective
+A simple E-commerce product recommendation system that combines user behavior tracking with LLM-powered explanations. It provides personalized product recommendations and explains why each product is suggested.
 
-This project combines a simple product recommendation system with LLM-powered explanations to help users understand why specific items are recommended to them.
+Features
 
-It demonstrates how recommendation logic and AI-driven natural language explanations can work together in an e-commerce context.
+Interactive frontend dashboard using Streamlit
 
-🚀 Features
+Product recommendation based on user interaction history
 
-📦 Product Catalog: Stores products with names, categories, and prices.
+LLM-powered explanations for each recommendation
 
-👤 User Behavior Tracking: Logs user interactions to inform recommendations.
+Backend API using FastAPI
 
-🤖 LLM-Powered Explanations: Generates personalized explanations for each recommendation.
+SQLite database for storing product catalog and user interactions
 
-🖥️ Interactive Frontend Dashboard: Built with Streamlit to view recommendations for any user.
+Top product suggestions if a user has no history
 
-⚙️ RESTful Backend API: FastAPI backend serving product and recommendation data.
+Tech Stack
 
-🧩 Project Structure
-ecommerce-recommender/
-│
-├── app.py                 # Streamlit frontend
-├── main.py                # FastAPI backend
-├── recommender.py         # Core recommendation logic
-├── llm.py                 # LLM-based explanation generation
-├── database.py            # SQLite database setup
-├── populate_data.py       # Adds sample data to the database
-├── requirements.txt       # Project dependencies
-└── README.md              # Project documentation
+Python 3.10+
 
-⚙️ Tech Stack
-Component	Technology Used
-Frontend UI	Streamlit
-Backend API	FastAPI
-Database	SQLite
-AI Explanation	Mock LLM (replaceable with OpenAI or similar)
-Language	Python 3.10+
-💻 Setup Instructions
-1️⃣ Clone the Repository
+Streamlit for frontend
+
+FastAPI for backend API
+
+SQLite for database
+
+Mock LLM / OpenAI API for explanation generation
+
+Setup Instructions
+1. Clone the repo
 git clone https://github.com/<your-username>/ecommerce-recommender.git
 cd ecommerce-recommender
 
-2️⃣ Create and Activate a Virtual Environment
+2. Create and activate a virtual environment
 
 Windows PowerShell:
 
@@ -56,43 +46,38 @@ If script execution is blocked:
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .venv\Scripts\Activate.ps1
 
-3️⃣ Install Dependencies
+3. Install dependencies
 pip install -r requirements.txt
 
-4️⃣ Populate Sample Data
+4. Populate sample data
 python populate_data.py
 
-
-You should see:
-
-Sample data added.
-
-🧠 Running the Project
-🖥️ Terminal 1 — Start Backend (FastAPI)
+Running the Project
+Terminal 1 — Start Backend (FastAPI)
 uvicorn main:app --reload
 
 
-Backend will start at:
-👉 http://127.0.0.1:8000
+The backend will be available at:
+http://127.0.0.1:8000
 
-💻 Terminal 2 — Start Frontend (Streamlit)
+Terminal 2 — Start Frontend (Streamlit)
 streamlit run app.py
 
 
-Frontend will open at:
-👉 http://localhost:8501
+The frontend will open at:
+http://localhost:8501
 
-🧠 How It Works
+How It Works
 
-The backend (main.py) retrieves user interaction data from the database.
+Backend retrieves user interactions from the database.
 
-The recommender (recommender.py) finds products based on similar categories or interests.
+Recommender system identifies products of interest based on categories or user behavior.
 
-The LLM (llm.py) generates a human-readable explanation of why each product is recommended.
+LLM generates a human-readable explanation for each recommendation.
 
-The frontend (app.py) displays recommendations for a selected user in an interactive UI.
+Frontend displays personalized product suggestions for the selected user.
 
-📊 Example Output
+Example Output
 
 Input:
 User ID = 1
@@ -100,38 +85,38 @@ User ID = 1
 Output:
 Recommended Products:
 
-“Wireless Headphones” 🎧
-→ Because user 1 interacted with similar products, Wireless Headphones is recommended.
+Wireless Headphones
+Because user 1 interacted with similar products, Wireless Headphones is recommended.
 
-“Bluetooth Speaker” 🔊
-→ Users like you often buy Bluetooth Speaker.
+Bluetooth Speaker
+Users like you often buy Bluetooth Speaker.
 
-🔧 Customization
+Customization
 
-To replace the mock LLM with OpenAI, update llm.py:
+Replace the mock LLM in llm.py with OpenAI API:
 
 import openai
 openai.api_key = "your_api_key"
 
 
-Then use:
+Use:
 
 response = openai.ChatCompletion.create(...)
 
-🧾 Future Improvements
+Future Improvements
 
-✅ Integrate real machine learning recommendation models
+Integrate a machine learning-based recommendation model
 
-✅ Add authentication and user profiles
+Add user authentication and profile personalization
 
-✅ Deploy backend and frontend on Render or Vercel
+Deploy on cloud platforms like Render or Vercel
 
-✅ Store real-time user clickstream data
+Track real-time user behavior
 
-✅ Replace mock LLM with OpenAI or Hugging Face model
+Replace mock LLM with OpenAI GPT or HuggingFace models
 
-👨‍💻 Author
+Author
 
 Nishitha
-🎓 Computer Science Engineer
-💡 Passionate about AI, Machine Learning, and Smart Applications.
+Computer Science Engineer
+Passionate about AI, Machine Learning, and Smart Applications
