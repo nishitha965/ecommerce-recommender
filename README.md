@@ -62,47 +62,54 @@ http://localhost:8501
 
 ## How It Works
 
-1. Backend retrieves **user interactions** from the database.  
-2. Recommender system identifies **products of interest** based on categories or user behavior.  
-3. LLM generates a **human-readable explanation** for each recommendation.  
-4. Frontend displays **personalized product suggestions** for the selected user.  
+Backend retrieves user interactions from the database.
+
+Recommender system identifies products of interest based on categories or user behavior.
+
+LLM generates a human-readable explanation for each recommendation.
+
+Frontend displays personalized product suggestions for the selected user.
 
 ## Example Output
 
-**Input:**  
+Input:
 User ID = 1
 
-**Output:**  
+Output:
 Recommended Products:
 
-- **Wireless Headphones**  
-  _Because user 1 interacted with similar products, Wireless Headphones is recommended._
+Wireless Headphones
+Because user 1 interacted with similar products, Wireless Headphones is recommended.
 
-- **Bluetooth Speaker**  
-  _Users like you often buy Bluetooth Speaker._
+Bluetooth Speaker
+Users like you often buy Bluetooth Speaker.
 
 ## Customization
 
-- Replace the mock LLM in `llm.py` with **OpenAI API**:
+Replace the mock LLM in llm.py with OpenAI API:
 
-```python
 import openai
 openai.api_key = "your_api_key"
 
-## Future Improvements
 
--Integrate a machine learning-based recommendation model
+## Use:
 
--Add user authentication and profile personalization
+response = openai.ChatCompletion.create(...)
 
--Deploy on cloud platforms like Render or Vercel
+Future Improvements
 
--Track real-time user behavior
+Integrate a machine learning-based recommendation model
 
--Replace mock LLM with OpenAI GPT or HuggingFace models
+Add user authentication and profile personalization
 
-## Author
+Deploy on cloud platforms like Render or Vercel
+
+Track real-time user behavior
+
+Replace mock LLM with OpenAI GPT or HuggingFace models
+
+##Author
 
 Nishitha
 Computer Science Engineer
-Passionate about AI, Machine Learning, and Smart Applications 
+Passionate about AI, Machine Learning, and Smart Applications
