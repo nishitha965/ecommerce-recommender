@@ -6,15 +6,15 @@ It demonstrates how recommendation logic and AI-generated explanations can work 
 
 Features
 
-Product Catalog: Stores products with names, categories, and prices.
+Product catalog storing product names, categories, and prices
 
-User Behavior Tracking: Logs user interactions to inform recommendations.
+User behavior tracking to inform recommendations
 
-LLM-Powered Explanations: Generates personalized text explanations for each recommendation.
+LLM-powered explanations for each recommended product
 
-Interactive Frontend Dashboard: Built with Streamlit to view recommendations for any user.
+Interactive frontend dashboard using Streamlit
 
-RESTful Backend API: FastAPI backend serving product and recommendation data.
+RESTful backend API built with FastAPI
 
 Project Structure
 ecommerce-recommender/
@@ -60,7 +60,7 @@ pip install -r requirements.txt
 python populate_data.py
 
 
-You should see:
+Expected output:
 
 Sample data added.
 
@@ -87,7 +87,7 @@ The recommender (recommender.py) finds products based on similar categories or i
 
 The LLM (llm.py) generates a short, human-readable explanation for each recommended product.
 
-The frontend (app.py) displays recommendations for a selected user in an interactive UI.
+The frontend (app.py) displays recommendations for a selected user in an interactive dashboard.
 
 Example Output
 
@@ -98,20 +98,24 @@ Output:
 Recommended Products:
 
 Wireless Headphones
-→ Because user 1 interacted with similar products, Wireless Headphones is recommended.
+
+Because user 1 interacted with similar products, Wireless Headphones is recommended.
 
 Bluetooth Speaker
-→ Users like you often buy Bluetooth Speaker.
+
+Users like you often buy Bluetooth Speaker.
 
 Customization
 
-To replace the mock LLM with OpenAI, update llm.py:
+If you want to replace the mock LLM with OpenAI API:
+
+Update llm.py:
 
 import openai
 openai.api_key = "your_api_key"
 
 
-Then use:
+Replace the function logic with:
 
 response = openai.ChatCompletion.create(...)
 
@@ -131,7 +135,7 @@ Author
 
 Nishitha
 Computer Science Engineer
-Passionate about AI, Machine Learning, and Smart Applications
+Passionate about Artificial Intelligence, Machine Learning, and Smart Applications
 
 License
 
