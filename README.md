@@ -2,19 +2,20 @@ E-commerce Product Recommender
 Objective
 
 This project combines a simple product recommendation system with LLM-powered explanations to help users understand why specific items are recommended to them.
+
 It demonstrates how recommendation logic and AI-generated explanations can work together in an e-commerce context.
 
 Features
 
-Product catalog storing product names, categories, and prices
+Product Catalog: Stores product names, categories, and prices.
 
-User behavior tracking to inform recommendations
+User Behavior Tracking: Logs user interactions to inform recommendations.
 
-LLM-powered explanations for each recommended product
+LLM-Powered Explanations: Generates personalized text explanations for each recommendation.
 
-Interactive frontend dashboard using Streamlit
+Interactive Frontend Dashboard: Built using Streamlit.
 
-RESTful backend API built with FastAPI
+RESTful Backend API: Implemented with FastAPI to serve recommendations and product data.
 
 Project Structure
 ecommerce-recommender/
@@ -33,7 +34,7 @@ Component	Technology Used
 Frontend UI	Streamlit
 Backend API	FastAPI
 Database	SQLite
-AI Explanation	Mock LLM (replaceable with OpenAI or similar)
+AI Explanation	Mock LLM (can be replaced with OpenAI API)
 Language	Python 3.10+
 Setup Instructions
 1. Clone the Repository
@@ -69,25 +70,25 @@ Terminal 1 — Start Backend (FastAPI)
 uvicorn main:app --reload
 
 
-Backend will start at:
+The backend will start at:
 http://127.0.0.1:8000
 
 Terminal 2 — Start Frontend (Streamlit)
 streamlit run app.py
 
 
-Frontend will open at:
+The frontend will open automatically at:
 http://localhost:8501
 
 How It Works
 
 The backend (main.py) retrieves user interaction data from the database.
 
-The recommender (recommender.py) finds products based on similar categories or interests.
+The recommender system (recommender.py) selects products based on user interests or category similarity.
 
-The LLM (llm.py) generates a short, human-readable explanation for each recommended product.
+The LLM module (llm.py) generates short, natural language explanations for each recommendation.
 
-The frontend (app.py) displays recommendations for a selected user in an interactive dashboard.
+The frontend (app.py) displays personalized product recommendations for each user in an interactive dashboard.
 
 Example Output
 
@@ -98,38 +99,39 @@ Output:
 Recommended Products:
 
 Wireless Headphones
-
 Because user 1 interacted with similar products, Wireless Headphones is recommended.
 
 Bluetooth Speaker
-
 Users like you often buy Bluetooth Speaker.
 
 Customization
 
-If you want to replace the mock LLM with OpenAI API:
+If you want to use the OpenAI API instead of a mock LLM:
 
-Update llm.py:
+Update the file llm.py:
 
 import openai
 openai.api_key = "your_api_key"
 
 
-Replace the function logic with:
+Replace the logic with:
 
 response = openai.ChatCompletion.create(...)
 
+
+This will generate real AI-based explanations.
+
 Future Improvements
 
-Integrate a real machine learning recommendation model
+Integrate a real machine learning-based recommender model
 
-Add authentication and user profiles
+Add user authentication and personalization features
 
-Deploy backend and frontend on cloud services (Render, Vercel, etc.)
+Deploy the app (backend + frontend) on cloud services like Render or Vercel
 
-Store real-time user clickstream data
+Include real-time user behavior tracking
 
-Replace mock LLM with OpenAI or Hugging Face API
+Replace mock LLM with OpenAI GPT or Hugging Face models
 
 Author
 
