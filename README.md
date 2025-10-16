@@ -1,39 +1,32 @@
-E-commerce Product Recommender
+# E-commerce Product Recommender
 
-A simple E-commerce product recommendation system that combines user behavior tracking with LLM-powered explanations. It provides personalized product recommendations and explains why each product is suggested.
+A simple **E-commerce product recommendation system** that combines user behavior tracking with **LLM-powered explanations**. It provides personalized product recommendations and explains why each product is suggested.
 
-Features
+## Features
 
-Interactive frontend dashboard using Streamlit
+- Interactive **frontend dashboard** using Streamlit  
+- **Product recommendation** based on user interaction history  
+- **LLM-powered explanations** for each recommendation  
+- **Backend API** using FastAPI  
+- **SQLite database** for storing product catalog and user interactions  
+- Top product suggestions if a user has no history  
 
-Product recommendation based on user interaction history
+## Tech Stack
 
-LLM-powered explanations for each recommendation
+- Python 3.10+  
+- **Streamlit** for frontend  
+- **FastAPI** for backend API  
+- **SQLite** for database  
+- **Mock LLM / OpenAI API** for explanation generation  
 
-Backend API using FastAPI
+## Setup Instructions
 
-SQLite database for storing product catalog and user interactions
-
-Top product suggestions if a user has no history
-
-Tech Stack
-
-Python 3.10+
-
-Streamlit for frontend
-
-FastAPI for backend API
-
-SQLite for database
-
-Mock LLM / OpenAI API for explanation generation
-
-Setup Instructions
-1. Clone the repo
+### 1. Clone the repo
+```bash
 git clone https://github.com/<your-username>/ecommerce-recommender.git
 cd ecommerce-recommender
 
-2. Create and activate a virtual environment
+### 2. Create and activate a virtual environment
 
 Windows PowerShell:
 
@@ -46,10 +39,10 @@ If script execution is blocked:
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .venv\Scripts\Activate.ps1
 
-3. Install dependencies
+### 3. Install dependencies
 pip install -r requirements.txt
 
-4. Populate sample data
+### 4. Populate sample data
 python populate_data.py
 
 Running the Project
@@ -67,7 +60,7 @@ streamlit run app.py
 The frontend will open at:
 http://localhost:8501
 
-How It Works
+### 5. How It Works
 
 Backend retrieves user interactions from the database.
 
@@ -77,7 +70,7 @@ LLM generates a human-readable explanation for each recommendation.
 
 Frontend displays personalized product suggestions for the selected user.
 
-Example Output
+### 6. Example Output
 
 Input:
 User ID = 1
@@ -91,7 +84,7 @@ Because user 1 interacted with similar products, Wireless Headphones is recommen
 Bluetooth Speaker
 Users like you often buy Bluetooth Speaker.
 
-Customization
+###  7. Customization
 
 Replace the mock LLM in llm.py with OpenAI API:
 
@@ -99,7 +92,7 @@ import openai
 openai.api_key = "your_api_key"
 
 
-Use:
+###  8. Use:
 
 response = openai.ChatCompletion.create(...)
 
@@ -115,7 +108,7 @@ Track real-time user behavior
 
 Replace mock LLM with OpenAI GPT or HuggingFace models
 
-Author
+### Author
 
 Nishitha
 Computer Science Engineer
