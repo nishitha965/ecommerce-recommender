@@ -60,7 +60,7 @@ streamlit run app.py
 The frontend will open at:
 http://localhost:8501
 
-### 5. How It Works
+## How It Works
 
 Backend retrieves user interactions from the database.
 
@@ -70,7 +70,7 @@ LLM generates a human-readable explanation for each recommendation.
 
 Frontend displays personalized product suggestions for the selected user.
 
-### 6. Example Output
+## Example Output
 
 Input:
 User ID = 1
@@ -84,7 +84,7 @@ Because user 1 interacted with similar products, Wireless Headphones is recommen
 Bluetooth Speaker
 Users like you often buy Bluetooth Speaker.
 
-###  7. Customization
+## Customization
 
 Replace the mock LLM in llm.py with OpenAI API:
 
@@ -92,7 +92,7 @@ import openai
 openai.api_key = "your_api_key"
 
 
-###  8. Use:
+## Use:
 
 response = openai.ChatCompletion.create(...)
 
@@ -108,7 +108,7 @@ Track real-time user behavior
 
 Replace mock LLM with OpenAI GPT or HuggingFace models
 
-### Author
+## Author
 
 Nishitha
 Computer Science Engineer
